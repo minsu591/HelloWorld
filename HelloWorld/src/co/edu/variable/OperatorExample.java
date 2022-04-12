@@ -34,7 +34,7 @@ public class OperatorExample {
 		int num100 = money / 100;
 		money = money % 100;
 
-		System.out.printf("5만원 => %d개, 1만원 => %d개, 5천원 => %d개, 1천원 => %d개, 500원 => %d개, 100원 => %d개\n", num50000,
-				num10000, num5000, num1000, num500, num100);
+		System.out.printf("5만원 => %d개, 1만원 => %d개, 5천원 => %d개, 1천원 => %d개, 500원 => %d개, 100원 => %d개\n", num50000, num10000, num5000, num1000, num500, num100);
+				
 	}
 }

@@ -1,7 +1,7 @@
 package co.edu.variable;
 
 import java.io.IOException;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class SystemExample {
 	public static void main(String[] args) {
