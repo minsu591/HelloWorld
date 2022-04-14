@@ -53,11 +53,7 @@ public class TVExample {
 		stud2.study();
 		stud1.showInfo();
 		stud2.showInfo();
-		
-		
-		
-		
-		
+
 	}
 
 }

@@ -1,6 +1,7 @@
 package co.edu;
 
 public class Board {
+	//게시글을 위한 기본 필드
 	//게시글 번호, 제목, 내용, 작성자, 조회횟수 (조회할 때마다 증가)
 	private int boardNo;
 	private String title;
@@ -61,7 +62,7 @@ public class Board {
 	//한 줄 보여주는 기능
 	public void getInfo() {
 		//게시글 번호  제목  내용  작성자  조회수
-		System.out.printf("%3d %10s %15s %4s %2d", this.boardNo, this.title, this.content, this.writer, this.searchCnt);
+		System.out.printf("%3d %10s %15s %4s %2d\n", this.boardNo, this.title, this.content, this.writer, this.searchCnt);
 	}
 	
 	
