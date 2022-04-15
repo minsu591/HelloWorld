@@ -9,6 +9,8 @@ public class Board {
 	private String writer;
 	private int searchCnt=0;
 	
+	static int writeDate;
+	
 	//생성자
 	public Board(int boardNo, String title, String content, String writer) {
 		super(); //부모 클래스의 생성자를 호출
@@ -64,6 +66,14 @@ public class Board {
 		//게시글 번호  제목  내용  작성자  조회수
 		System.out.printf("%3d %10s %15s %4s %2d\n", this.boardNo, this.title, this.content, this.writer, this.searchCnt);
 	}
+
+	@Override //어노테이션 - 부모 클래스가 가진 toString을 자식 클래스가 재정의하겠다 : Overriding
+	public String toString() {
+		return "Board [boardNo=" + boardNo + ", title=" + title + ", content=" + content + ", writer=" + writer
+				+ ", searchCnt=" + searchCnt + "]";
+	}
+	
+	
 	
 	
 }
