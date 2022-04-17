@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class MemberExample {
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in); // 기본 생성자가 없어서 System.in을 넣는 것
+		//멤버 선언
 		Member m1 = new Member("user1", "사용자1", "012-2334-3234", 21);
 		m1.setMemberAge(-12);
 		System.out.println("나이 : " + m1.getMemberAge());

@@ -9,6 +9,7 @@ public class Board {
 	private String writer;
 	private int searchCnt=0;
 	
+	//정적 인스턴스 (클래스 존재와 동시에 사용가능, 선언할 필요없음)
 	static int writeDate;
 	
 	//생성자
