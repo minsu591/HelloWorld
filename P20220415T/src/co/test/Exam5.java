@@ -1,8 +1,6 @@
-package co.edu.statics;
+package co.test;
 
 import java.util.Scanner;
-
-import co.edu.statics.Exam4;
 
 // 종합.
 // 클래스의 인스턴스와 배열의 활용.
@@ -12,7 +10,7 @@ import co.edu.statics.Exam4;
 // -> 똑같은 이름 있으면 다 띄우고 선택해서 지우기
 // 삭제 : 이름으로 찾아와서 연락처 자체를 지움 null
 
-public class Exex {
+public class Exam5 {
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
 		Exam4[] friends = new Exam4[10];
@@ -54,44 +52,46 @@ public class Exex {
 				}
 
 			} else if (menu == 2) {
-				int[] saveNum = new int[10];
-				//초기화
-				for(int save : saveNum) {
-					save = -1;
-				}
-				
+				boolean flag = false;
 				System.out.print("수정할 친구의 이름을 입력해주세요. >>> ");
 				String name = scn.next();
-				
-				//saveNum에 같은 이름 가진 사람들의 인덱스 삽입
-				for(int i = 0; i<friends.length;i++) {
-					if(friends[i]!=null && friends[i].getName().equals(name)) {
-						for(int save : saveNum) {
-							if(save==-1) {
-								save = i;
+
+				for (int i = 0; i < friends.length; i++) {
+					if (friends[i] != null) {
+						if (friends[i].getName().equals(name)) {
+							System.out.println("수정을 진행합니다.");
+							System.out.print("수정할 전화번호를 입력해주세요. >>> ");
+							String phoneNo = scn.next();
+							// 중복 전화번호 없게 하는거
+							boolean phoneCheck = false;
+							for (int j = 0; j < friends.length; j++) {
+								if (friends[j] != null) {
+									if (friends[j].getPhoneNo().equals(phoneNo)) {
+										phoneCheck = true; // 기존에 존재하는 전화번호
+									}
+								}
+							}
+							if (phoneCheck) {
+								System.out.println("기존에 존재하는 전화번호입니다. 재입력 바랍니다.");
+								flag = false;
+								break;
+
+							} else {
+								friends[i].setPhoneNo(phoneNo);
+								System.out.println("수정 : 정상 처리되었습니다.");
+								flag = false;
 								break;
 							}
+
+						} else {
+							flag = true;
 						}
+					} else {
+						flag = true;
 					}
 				}
-				
-				//해당 인덱스 사람들 프린트
-				for(int i = 0; i<saveNum.length;i++) {
-					int save = saveNum[i];
-					if(save != -1 && friends[save]!=null) {
-						System.out.println(i);
-						friends[save].getInfo();
-					}
-				}
-				
-				System.out.println("수정할 정보를 선택하세요 >>> ");
-				int sel = scn.nextInt();
-				int saveNo = saveNum[sel];
-				if(saveNo != -1 && friends[saveNo]!=null) {
-					System.out.print("수정할 전화번호를 입력하세요 >>> ");
-					String phoneNo = scn.next();
-					friends[saveNo].setPhoneNo(phoneNo);
-					System.out.println("완료되었습니다.");
+				if (flag) {
+					System.out.println("수정 : 기존에 존재하지 않는 친구입니다.");
 				}
 
 			} else if (menu == 3) { // 삭제
