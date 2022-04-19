@@ -34,8 +34,10 @@ public class RunnableExample{
 		};
 		runnable.run();
 		
-		//실행할게 하나밖에 없으면
+		//람다 표현식
 		runnable = () -> System.out.println("병아리가 움직입니다!");
 		runnable.run();
+		
+		
 	}
 }
