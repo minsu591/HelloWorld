@@ -23,7 +23,7 @@ public class Friend {
 	}
 
 	// 메소드
-	protected String getName() {
+	public String getName() {
 		return name;
 	}
 
