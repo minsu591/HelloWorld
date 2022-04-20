@@ -1,4 +1,4 @@
-package co.edu.collection;
+package co.edu.collection; //수정하기
 
 import java.util.ArrayList;
 import java.util.Scanner;

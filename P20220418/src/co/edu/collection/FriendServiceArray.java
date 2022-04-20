@@ -1,8 +1,10 @@
 package co.edu.collection;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import co.edu.friend.Friend;
+import co.edu.friend.Gender;
 //배열의 기능 활용
 public class FriendServiceArray implements FriendService{
 	Scanner scn = new Scanner(System.in);
@@ -22,7 +24,7 @@ public class FriendServiceArray implements FriendService{
 	@Override
 	public void modFriend(Friend friend) { //이름으로 찾아서 연락처 수정
 		for(int i = 0; i<friends.length;i++) {
-			if(friends[i]!=null && friends[i].getName().equals(friend.getName())) {
+			if(friends[i]!=null && friends[i].getName().equals(friend.getName())&& friends[i].getPhone().equals(friend.getPhone())) {
 				System.out.println(friend.getName()+"의 연락처를 수정합니다.");
 				System.out.print("수정할 연락처를 입력해주세요 >>> ");
 				String newPhone = scn.next();
@@ -69,6 +71,18 @@ public class FriendServiceArray implements FriendService{
 				
 			}
 		}
+		
+	}
+
+	@Override
+	public ArrayList<Friend> findGender(Gender gender) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void returnGender() {
+		// TODO Auto-generated method stub
 		
 	}
 

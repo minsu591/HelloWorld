@@ -9,6 +9,7 @@ public class Friend {
 	// 필드는 private으로 숨겨주기
 	private String name;
 	private String phone;
+	private Gender gender; //MEN, WOMEN ->밖에 못 옴
 	
 	//기본 생성자 (protected)
 	protected Friend() {
@@ -21,6 +22,14 @@ public class Friend {
 		this.name = name;
 		this.phone = phone;
 	}
+	
+	public Friend(String name, String phone, Gender gender) {
+		super();
+		this.name = name;
+		this.phone = phone;
+		this.gender = gender;
+	}
+
 
 	// 메소드
 	public String getName() {
@@ -31,7 +40,7 @@ public class Friend {
 		this.name = name;
 	}
 
-	String getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
@@ -39,11 +48,12 @@ public class Friend {
 		this.phone = phone;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Friend [name=" + name + ", phone=" + phone + "]";
+		return "Friend [name=" + name + ", phone=" + phone + ", gender=" + gender + "]";
 	}
-	
+
 	public Friend addFriend() {
 		System.out.print("친구의 이름을 입력해주세요 >>> ");
 		String name = scn.next();
@@ -52,5 +62,19 @@ public class Friend {
 		Friend newFriend = new Friend(name, phone);
 		return newFriend;
 	}
+
+	
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+	
+//	@Override
+//	public boolean equals(Object o) {
+//		return (name == ((Friend)o).name && phone == ((Friend)o).phone);
+//	}
 
 }
