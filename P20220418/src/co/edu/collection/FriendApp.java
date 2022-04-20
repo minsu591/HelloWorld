@@ -41,7 +41,15 @@ public class FriendApp {
 				String name = scn.next();
 				System.out.print("수정할 친구의 연락처를 입력해주세요 >>> ");
 				String phone = scn.next();
-				Friend friend = new Friend(name, phone);
+				System.out.println("수정할 친구의 성별을 입력해주세요 >>> ");
+				String gender = scn.next();
+				Gender gen = Gender.MEN;
+				if (gender.startsWith("남")) {
+					gen = Gender.MEN;
+				} else if (gender.startsWith("여")) {
+					gen = Gender.WOMEN;
+				}
+				Friend friend = new Friend(name, phone, gen);
 				service.modFriend(friend);
 
 			} else if (menu == FriendService.REM) {
@@ -63,8 +71,7 @@ public class FriendApp {
 				service.allsearchFriend();
 			} else if (menu == FriendService.FIND_MEN) {// 남자
 				Gender gen = Gender.MEN;
-				
-				
+
 				ArrayList<Friend> list = service.findGender(gen);
 				for (Friend f : list) {
 					System.out.println(f.toString());
@@ -75,7 +82,7 @@ public class FriendApp {
 				for (Friend f : list) {
 					System.out.println(f.toString());
 				}
-			}else if(menu==8) { //gender return
+			} else if (menu == 8) { // gender return
 				service.returnGender();
 			}
 

@@ -46,9 +46,10 @@ public class FriendServiceList implements FriendService {
 		
 		
 		//.indexOf 사용 -> 클래스 자체의 equals를 오버라이딩해야됨
-//		System.out.print(friend.toString());
+//		System.out.println(friend.toString());
 //		int whereIndex = friends.indexOf(friend);
 //		System.out.println(whereIndex);
+//		
 //		if(whereIndex == -1) {
 //			System.out.println("존재하지 않는 친구입니다.");
 //		}else {

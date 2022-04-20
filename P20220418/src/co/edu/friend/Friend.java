@@ -72,9 +72,15 @@ public class Friend {
 		this.gender = gender;
 	}
 	
+	
 //	@Override
-//	public boolean equals(Object o) {
-//		return (name == ((Friend)o).name && phone == ((Friend)o).phone);
-//	}
+//    public boolean equals(Object obj) {
+//    	if(obj instanceof Friend) {
+//    		Friend val = (Friend) obj; //들어온 Object를 해당 클래스로 캐스팅하고
+//    		return this.equals(val); //그 값을 해당 클래스의 이름과 비교해서 true, false
+//    	}else {
+//    		return false;
+//    	}
+//    }
 
 }
