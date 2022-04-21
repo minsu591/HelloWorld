@@ -6,17 +6,19 @@ public class Calendar {
 		String[] week = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
 		int month = 3;
 		
-		// 날짜 정의
+		// 배열에 날짜 담기
 		int[] days = new int[getDaysForMonth(month)];
 		for (int i = 0; i < days.length; i++) {
 			days[i] = i + 1;
 		}
-
+		
+		//요일 출력
 		for (int i = 0; i < week.length; i++) {
 			System.out.printf("%4s", week[i]);
 		}
 		System.out.println();
 		
+		//빈칸 몇 갠지 blank에 담기
 		int blank = getBlankForMonth(month);
 		for (int i = 0; i< blank; i++) {
 			System.out.printf("%4s"," ");

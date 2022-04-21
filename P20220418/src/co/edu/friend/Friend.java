@@ -73,14 +73,18 @@ public class Friend {
 	}
 	
 	
-//	@Override
-//    public boolean equals(Object obj) {
-//    	if(obj instanceof Friend) {
-//    		Friend val = (Friend) obj; //들어온 Object를 해당 클래스로 캐스팅하고
-//    		return this.equals(val); //그 값을 해당 클래스의 이름과 비교해서 true, false
-//    	}else {
-//    		return false;
-//    	}
-//    }
+	@Override
+    public boolean equals(Object obj) {
+    	if(obj instanceof Friend) {
+    		Friend val = (Friend) obj; //들어온 Object를 해당 클래스로 캐스팅하고
+    		if(this.name.equals(val.name)&&this.phone.equals(val.phone)&&this.gender.equals(val.gender)) {
+    			return true;
+    		}else {
+    			return false;
+    		}
+    	}else {
+    		return false;
+    	}
+    }
 
 }
